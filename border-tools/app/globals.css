@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #c8a84b;
+  --gold-light: #e8c96a;
+  --gold-muted: rgba(200, 168, 75, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #09090b;
+  color: #e4e4e7;
+  font-family: var(--font-barlow), sans-serif;
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply inline-flex items-center gap-3 text-[11px] font-semibold tracking-[3px] uppercase text-yellow-500/80 mb-5;
+  }
+  .section-eyebrow::before {
+    content: '';
+    @apply block w-7 h-px bg-yellow-500/60;
+  }
+
+  .section-title {
+    @apply font-condensed font-bold text-4xl md:text-5xl uppercase leading-[0.95] tracking-tight text-zinc-100;
+  }
+
+  .card-base {
+    @apply bg-bg-card border border-white/[0.06] rounded-xl p-6 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-white/[0.12] hover:bg-bg-hover;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold text-bg-primary font-condensed font-bold text-sm tracking-[2px] uppercase transition-all duration-200 hover:bg-gold-light hover:-translate-y-0.5;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-zinc-300 font-condensed font-bold text-sm tracking-[2px] uppercase transition-all duration-200 hover:border-white/40 hover:text-white;
+  }
+
+  .stat-number {
+    @apply font-condensed font-bold text-4xl text-zinc-100;
+  }
+
+  .tag {
+    @apply inline-block px-2 py-0.5 text-[10px] font-semibold tracking-widest uppercase rounded;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #09090b; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* Grid pattern overlay */
+.grid-bg {
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.018) 80px),
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.018) 80px);
+}

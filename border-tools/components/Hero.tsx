@@ -46,7 +46,7 @@ export default function Hero() {
               className="section-eyebrow"
               custom={0} variants={fadeUp} initial="hidden" animate="show"
             >
-              Plan de Expansión Digital 2025–2026
+              Plan de Expansión Digital 2026
             </motion.div>
 
             <motion.h1
